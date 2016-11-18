@@ -12,7 +12,6 @@ header("Content-Type: text/html");
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>BigPipe example</title>
-<link href="style/fonts.css" rel="stylesheet" type="text/css" />
 <link href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>

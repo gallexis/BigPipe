@@ -16,11 +16,10 @@ require_once('libs_php/h_pagelet.inc');
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>BigPipe example</title>
-<script type="text/javascript" src="js/prototype.js"></script>
-<script type="text/javascript" src="js/prototypepatch.js"></script>
-<script type="text/javascript" src="js/bigpipe.js"></script>
-<link href="style/fonts.css" rel="stylesheet" type="text/css" />
+
 <link href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js/lib/bigPipe.js"></script>
+
 </head>
 <body>
 <div id="menu-wrapper">
@@ -36,7 +35,9 @@ require_once('libs_php/h_pagelet.inc');
 	</div>
 	<!-- end #menu --> 
 </div>
+
 <div id="banner"><a href="#"><img src="images/img01.jpg" width="1000" height="200" alt="" /></a></div>
+
 <div id="header-wrapper">
 	<div id="header">
 		<div id="logo">
@@ -52,25 +53,27 @@ require_once('libs_php/h_pagelet.inc');
 				
 					<?php
 						// sidebar						
-						$content = file_get_contents('./pagelets/sidebar.html', FILE_USE_INCLUDE_PATH);
-						$pagelet = new Pagelet('sidebar');
+						$content = file_get_contents('./pagelets/html/leftbar.html', FILE_USE_INCLUDE_PATH);
+						$pagelet = new Pagelet('leftbar');
+						$pagelet->add_css("pagelets/css/leftbar.css");
 						$pagelet->add_content($content);
 						echo $pagelet;
-					?>				
-
+					?>
+					
 					<?php
 						// content						
-						$content = file_get_contents('./pagelets/content.html', FILE_USE_INCLUDE_PATH);
+						$content = file_get_contents('./pagelets/html/content.html', FILE_USE_INCLUDE_PATH);
 						$pagelet = new Pagelet('content');
+						$pagelet->add_css("pagelets/css/content.css");
 						$pagelet->add_content($content);
 						echo $pagelet;
-					?>					
-					
+					?>
 
 					<?php
 						// sidebar2						
-						$content = file_get_contents('./pagelets/sidebar2.html', FILE_USE_INCLUDE_PATH);
-						$pagelet = new Pagelet('sidebar2');
+						$content = file_get_contents('./pagelets/html/rightbar.html', FILE_USE_INCLUDE_PATH);
+						$pagelet = new Pagelet('rightbar');
+						$pagelet->add_css("pagelets/css/rightbar.css");
 						$pagelet->add_content($content);
 						//$pagelet->add_javascript_code("$('javascript_inline_test').innerHTML = 'Ok';");
 						echo $pagelet;
