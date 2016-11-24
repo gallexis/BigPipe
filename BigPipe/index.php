@@ -52,28 +52,28 @@ require_once('libs_php/h_pagelet.inc');
 			<div id="page-bgbtm">
 				
 					<?php
-						// sidebar						
-						$content = file_get_contents('./pagelets/html/leftbar.html', FILE_USE_INCLUDE_PATH);
+						// leftbar						
+						$content = file_get_contents('./pagelets/leftbar/leftbar.html', FILE_USE_INCLUDE_PATH);
 						$pagelet = new Pagelet('leftbar');
-						$pagelet->add_css("pagelets/css/leftbar.css");
+						$pagelet->add_css("pagelets/leftbar/leftbar.css");
 						$pagelet->add_content($content);
 						echo $pagelet;
 					?>
 					
 					<?php
-						// content						
-						$content = file_get_contents('./pagelets/html/content.html', FILE_USE_INCLUDE_PATH);
+						// middlebar						
+						$content = file_get_contents('./pagelets/middlebar/middlebar.html', FILE_USE_INCLUDE_PATH);
 						$pagelet = new Pagelet('content');
-						$pagelet->add_css("pagelets/css/content.css");
+						$pagelet->add_css("pagelets/middlebar/middlebar.css");
 						$pagelet->add_content($content);
 						echo $pagelet;
 					?>
 
 					<?php
-						// sidebar2						
-						$content = file_get_contents('./pagelets/html/rightbar.html', FILE_USE_INCLUDE_PATH);
+						// rightbar						
+						$content = file_get_contents('./pagelets/rightbar/rightbar.html', FILE_USE_INCLUDE_PATH);
 						$pagelet = new Pagelet('rightbar');
-						$pagelet->add_css("pagelets/css/rightbar.css");
+						$pagelet->add_css("pagelets/rightbar/rightbar.css");
 						$pagelet->add_content($content);
 						//$pagelet->add_javascript_code("$('javascript_inline_test').innerHTML = 'Ok';");
 						echo $pagelet;

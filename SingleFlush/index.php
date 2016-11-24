@@ -45,7 +45,7 @@ header("Content-Type: text/html");
 				<div id="sidebar">	
 					<?php
 						// sidebar						
-						$content = file_get_contents('./pagelets/sidebar.html', FILE_USE_INCLUDE_PATH);
+						$content = file_get_contents('./content/leftbar.html', FILE_USE_INCLUDE_PATH);
 						echo $content;
 					?>				
 				</div>
@@ -53,7 +53,7 @@ header("Content-Type: text/html");
 				<div id="content">
 					<?php
 						// content						
-						$content = file_get_contents('./pagelets/content.html', FILE_USE_INCLUDE_PATH);
+						$content = file_get_contents('./content/middlebar.html', FILE_USE_INCLUDE_PATH);
 						echo $content;
 					?>					
 				</div>	
@@ -61,7 +61,7 @@ header("Content-Type: text/html");
 				<div id="sidebar2">
 					<?php
 						// sidebar2						
-						$content = file_get_contents('./pagelets/sidebar2.html', FILE_USE_INCLUDE_PATH);
+						$content = file_get_contents('./content/rightbar.html', FILE_USE_INCLUDE_PATH);
 						echo $content;
 					?>
 				</div>
