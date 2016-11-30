@@ -1,6 +1,6 @@
 <?php
 
-$ROOT = "/BigPipe-master";
+$ROOT = realpath(dirname(__FILE__)."/../");
 
 #===============================================================================
 # Enable debugging mode
@@ -10,22 +10,22 @@ BigPipe\BigPipe::debugging(TRUE);
 #===============================================================================
 # Pagelet: LeftBar
 #===============================================================================
-$LeftBar = new BigPipe\Pagelet('leftBar');
+$LeftBar = new BigPipe\Pagelet('leftbar');
 
 $content = file_get_contents($ROOT.'/static/pagelets/leftbar/leftbar.html', FILE_USE_INCLUDE_PATH);
-
 $LeftBar->addHTML($content);
-$LeftBar->addCSS($ROOT.'/static/pagelets/leftbar/leftbar.css.php');
+$LeftBar->addCSS('/BigPipe-master/static/pagelets/leftbar/leftbar.css.php');
+
 
 #===============================================================================
 # Pagelet: MiddleBar
 #===============================================================================
-$MiddleBar = new BigPipe\Pagelet('middleBar', BigPipe\Pagelet::PRIORITY_HIGH);
+$MiddleBar = new BigPipe\Pagelet('content', BigPipe\Pagelet::PRIORITY_HIGH);
 
-$content = file_get_contents($ROOT.'/static/pagelets/middlebar/middlebar.html', FILE_USE_INCLUDE_PATH);
-
+$content = file_get_contents($ROOT.'/static/pagelets/content/content.html', FILE_USE_INCLUDE_PATH);
 $MiddleBar->addHTML($content);
-$MiddleBar->addCSS($ROOT.'/static/pagelets/middlebar/middlebar.css.php');
+$MiddleBar->addCSS('/BigPipe-master/static/pagelets/content/content.css.php');
+
 
 #===============================================================================
 # Pagelet: RightBar
@@ -33,9 +33,8 @@ $MiddleBar->addCSS($ROOT.'/static/pagelets/middlebar/middlebar.css.php');
 $RightBar = new BigPipe\Pagelet('rightbar', BigPipe\Pagelet::PRIORITY_HIGH);
 
 $content = file_get_contents($ROOT.'/static/pagelets/rightbar/rightbar.html', FILE_USE_INCLUDE_PATH);
-
 $RightBar->addHTML($content);
-$RightBar->addCSS($ROOT.'/static/pagelets/rightbar/rightbar.css.php');
+$RightBar->addCSS('/BigPipe-master/static/pagelets/rightbar/rightbar.css.php');
 
 
 ?>
